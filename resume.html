@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zytrix | Resume AI Tool</title>
+  <link rel="icon" type="image/png" href="image/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="header-logo-mark small-header-logo" aria-hidden="true">Z</span>
+        <span class="brand-text">Zytrix</span>
+      </a>
+      <nav class="site-nav static-nav">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="tool-layout">
+      <section class="glass-card tool-panel reveal">
+        <p class="eyebrow">Resume AI tool</p>
+        <h1>Generate a clean professional resume</h1>
+        <form id="resumeForm" class="stack-form">
+          <label>
+            <span>Name</span>
+            <input id="candidateName" name="candidateName" type="text" placeholder="Your full name" required>
+          </label>
+          <label>
+            <span>Skills</span>
+            <textarea id="candidateSkills" name="candidateSkills" rows="4" placeholder="Example: HTML, CSS, JavaScript, UI Design" required></textarea>
+          </label>
+          <label>
+            <span>Education</span>
+            <textarea id="candidateEducation" name="candidateEducation" rows="4" placeholder="Degree, institution, certifications, achievements" required></textarea>
+          </label>
+          <button class="btn btn-primary wide" type="submit">Generate Resume</button>
+        </form>
+      </section>
+
+      <section class="glass-card resume-output reveal delay-1">
+        <div class="resume-output-head">
+          <div>
+            <p class="eyebrow">Generated preview</p>
+            <h2>Formatted resume</h2>
+          </div>
+        </div>
+        <div id="resumeOutput" class="resume-card">
+          <h3>Your resume preview will appear here.</h3>
+          <p>Fill in your details and let Zytrix assemble a polished summary.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="market-footer centered-footer">
+    <p>All Rights Reserved By <a href="https://venkatpraveen.netlify.app/" target="_blank" rel="noopener">VENKAT PRAVEEN</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
