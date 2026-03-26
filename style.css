@@ -234,6 +234,33 @@ textarea {
   backdrop-filter: blur(16px);
 }
 
+.mobile-nav-dropdown {
+  width: 100%;
+}
+
+.mobile-nav-dropdown summary {
+  display: none;
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.mobile-nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
 .market-main {
   width: min(1480px, calc(100% - 24px));
   margin: 18px auto 32px;
@@ -1300,5 +1327,29 @@ textarea {
 
   .market-actions {
     justify-content: flex-start;
+  }
+
+  .market-header-bottom {
+    justify-content: stretch;
+  }
+
+  .mobile-nav-dropdown summary {
+    display: block;
+  }
+
+  .mobile-nav-menu {
+    display: none;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .mobile-nav-dropdown[open] .mobile-nav-menu {
+    display: flex;
   }
 }
