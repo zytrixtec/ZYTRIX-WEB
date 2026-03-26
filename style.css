@@ -127,6 +127,7 @@ textarea {
   z-index: 50;
   box-shadow: 0 14px 30px rgba(19, 49, 78, 0.16);
   animation: slideDownSoft 0.7s ease;
+  transition: transform 0.28s ease, opacity 0.28s ease;
 }
 
 .market-header-top {
@@ -978,6 +979,13 @@ textarea {
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(16px);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.market-header.header-hidden,
+.site-header.header-hidden {
+  transform: translateY(-110%);
+  opacity: 0;
 }
 
 .brand-text,

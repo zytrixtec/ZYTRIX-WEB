@@ -1,7 +1,11 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
+const marketHeader = document.querySelector(".market-header");
+const siteHeader = document.querySelector(".site-header");
+const stickyHeader = marketHeader || siteHeader;
 
 createSplashScreenOnce();
+setupAutoHideHeader();
 
 if (navToggle && navMenu) {
   navToggle.addEventListener("click", () => {
@@ -220,4 +224,30 @@ function createSplashScreenOnce() {
     splash.classList.add("site-splash-hide");
     window.setTimeout(() => splash.remove(), 700);
   }, 2000);
+}
+
+function setupAutoHideHeader() {
+  if (!stickyHeader) {
+    return;
+  }
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 20) {
+      stickyHeader.classList.remove("header-hidden");
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      stickyHeader.classList.add("header-hidden");
+    } else {
+      stickyHeader.classList.remove("header-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 }
